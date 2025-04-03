@@ -2,13 +2,10 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Platform](https://img.shields.io/badge/platform-Web-brightgreen.svg)
 
 一个纯前端的课堂助手应用，提供课表管理、课件管理和问答功能。
 
-[功能特点](#功能特点) • [项目结构](#项目结构) • [快速开始](#快速开始)
+[功能特点](#功能特点) • [项目结构](#项目结构)
 
 </div>
 
