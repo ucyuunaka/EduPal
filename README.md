@@ -143,4 +143,126 @@ unsubscribe();
 eventBus.off("userLogin");
 ```
 
+### UI 基础组件
+
+#### 1. 设计规范 (styles/base/)
+
+创建了统一的设计系统，确保整个应用的视觉一致性：
+
+- **variables.css**: 定义全局设计变量
+  - 颜色系统（主色、功能色、背景色、文本色）
+  - 字体系统（字体族、大小、粗细、行高）
+  - 间距和尺寸（统一间距体系、组件尺寸）
+  - 阴影、圆角、动效
+  - 深色模式适配
+- **reset.css**: 重置浏览器默认样式
+  - 统一盒模型
+  - 移除默认边距和填充
+  - 标准化表单元素
+  - 定义基本的辅助类
+
+#### 2. 按钮组件 (button.css)
+
+实现了完整的按钮系统：
+
+- 多种类型：主要按钮、次要按钮、轮廓按钮、文本按钮
+- 多种尺寸：小、中（默认）、大
+- 状态样式：悬停、激活、禁用、加载中
+- 特殊形式：块级按钮、图标按钮、按钮组
+
+**示例用法：**
+
+```html
+<!-- 基本按钮 -->
+<button class="btn btn-primary">主要按钮</button>
+<button class="btn btn-secondary">次要按钮</button>
+<button class="btn btn-outline">轮廓按钮</button>
+<button class="btn btn-text">文本按钮</button>
+
+<!-- 按钮尺寸 -->
+<button class="btn btn-primary btn-sm">小按钮</button>
+<button class="btn btn-primary">默认大小</button>
+<button class="btn btn-primary btn-lg">大按钮</button>
+
+<!-- 状态示例 -->
+<button class="btn btn-primary" disabled>禁用按钮</button>
+<button class="btn btn-primary btn-loading">加载中</button>
+
+<!-- 特殊按钮 -->
+<button class="btn btn-primary btn-block">块级按钮</button>
+<button class="btn btn-primary btn-icon"><span class="icon">+</span></button>
+```
+
+#### 3. 输入框组件 (input.css)
+
+提供了功能齐全的表单控件：
+
+- 多种类型：文本输入框、搜索框、数字输入框、文本区域
+- 多种尺寸：小、中（默认）、大
+- 状态样式：焦点、错误、成功、禁用
+- 额外功能：前缀/后缀图标、标签、帮助文本
+
+**示例用法：**
+
+```html
+<!-- 基本输入框 -->
+<div class="input-wrapper">
+  <input type="text" class="input" placeholder="请输入内容" />
+</div>
+
+<!-- 带标签的输入框 -->
+<div class="input-wrapper">
+  <label class="input-label">用户名</label>
+  <input type="text" class="input" />
+  <div class="input-help">请输入您的用户名</div>
+</div>
+
+<!-- 错误状态 -->
+<div class="input-wrapper">
+  <input type="text" class="input error" value="错误输入" />
+  <div class="input-help error">输入内容无效</div>
+</div>
+
+<!-- 带图标的输入框 -->
+<div class="input-wrapper has-prefix">
+  <span class="input-prefix">@</span>
+  <input type="text" class="input" placeholder="用户名" />
+</div>
+```
+
+#### 4. 模态框组件 (modal.css)
+
+实现了可复用的对话框系统：
+
+- 多种尺寸：小、中（默认）、大、全屏
+- 动画效果：缩放、上滑
+- 组件部分：标题栏、内容区、底部操作区
+- 特殊类型：确认对话框
+
+**示例用法：**
+
+```html
+<!-- 基本模态框结构 -->
+<div class="modal-backdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">对话框标题</h3>
+      <button class="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">这里是模态框内容...</div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary">取消</button>
+      <button class="btn btn-primary">确定</button>
+    </div>
+  </div>
+</div>
+
+<!-- 显示模态框 -->
+<script>
+  document.querySelector(".modal-backdrop").classList.add("active");
+</script>
+```
+
 ## 📝 后续计划
+
+？有吗
