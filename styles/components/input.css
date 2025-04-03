@@ -1,0 +1,192 @@
+/* 输入框基础样式 */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  height: var(--input-height-md);
+  padding: 0 var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: calc(var(--input-height-md) - 2px);
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+  background-clip: padding-box;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--border-focus);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(74, 108, 250, 0.15);
+}
+
+.input::placeholder {
+  color: var(--text-hint);
+  opacity: 1;
+}
+
+/* 输入框尺寸变体 */
+.input-sm {
+  height: var(--input-height-sm);
+  padding: 0 var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-sm);
+}
+
+.input-lg {
+  height: var(--input-height-lg);
+  padding: 0 var(--spacing-lg);
+  font-size: var(--font-size-md);
+  border-radius: var(--radius-lg);
+}
+
+/* 状态样式 */
+.input:disabled,
+.input.disabled {
+  background-color: var(--bg-color-light);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.input.error {
+  border-color: var(--error-color);
+}
+
+.input.error:focus {
+  box-shadow: 0 0 0 3px rgba(245, 34, 45, 0.15);
+}
+
+.input.success {
+  border-color: var(--success-color);
+}
+
+.input.success:focus {
+  box-shadow: 0 0 0 3px rgba(82, 196, 26, 0.15);
+}
+
+/* 输入框附加元素 */
+.input-prefix,
+.input-suffix {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: var(--text-hint);
+  pointer-events: none;
+}
+
+.input-prefix {
+  left: var(--spacing-md);
+}
+
+.input-suffix {
+  right: var(--spacing-md);
+}
+
+.has-prefix .input {
+  padding-left: calc(2 * var(--spacing-md) + 16px);
+}
+
+.has-suffix .input {
+  padding-right: calc(2 * var(--spacing-md) + 16px);
+}
+
+/* 可操作的后缀 */
+.input-suffix.clickable {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* 文本区域 */
+textarea.input {
+  height: auto;
+  min-height: 100px;
+  resize: vertical;
+  padding: var(--spacing-sm) var(--spacing-md);
+  line-height: var(--line-height-default);
+}
+
+/* 标签样式 */
+.input-label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+/* 帮助文本样式 */
+.input-help {
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  color: var(--text-hint);
+}
+
+.input-help.error {
+  color: var(--error-color);
+}
+
+/* 搜索输入框 */
+.input-search {
+  padding-right: calc(var(--input-height-md) - var(--spacing-xs));
+}
+
+.input-search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(var(--input-height-md) - var(--spacing-xs));
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-hint);
+  transition: color var(--transition-fast);
+}
+
+.input-search-button:hover {
+  color: var(--primary-color);
+}
+
+/* 数字输入框 */
+.input-number {
+  position: relative;
+}
+
+.input-number .input {
+  padding-right: 32px;
+}
+
+.input-number-handlers {
+  position: absolute;
+  right: var(--spacing-xs);
+  top: 50%;
+  transform: translateY(-50%);
+  height: calc(100% - var(--spacing-sm));
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  border-radius: var(--radius-sm);
+}
+
+.input-number-handler {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-hint);
+}
+
+.input-number-handler:hover {
+  color: var(--primary-color);
+}

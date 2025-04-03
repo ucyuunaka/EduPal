@@ -1,0 +1,181 @@
+/* 模态框背景 */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-index-modal-backdrop);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 模态框容器 */
+.modal {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  background-color: var(--bg-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  z-index: var(--z-index-modal);
+}
+
+.modal-backdrop.active .modal {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 模态框尺寸 */
+.modal-sm {
+  max-width: 360px;
+}
+
+.modal-lg {
+  max-width: 720px;
+}
+
+.modal-xl {
+  max-width: 900px;
+}
+
+.modal-fullscreen {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 0;
+  margin: 0;
+}
+
+/* 模态框头部 */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-compact);
+}
+
+.modal-close {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: var(--spacing-xs);
+  margin: calc(-1 * var(--spacing-xs));
+  color: var(--text-hint);
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+}
+
+/* 模态框内容 */
+.modal-body {
+  padding: var(--spacing-lg);
+  overflow-y: auto;
+  max-height: calc(90vh - 130px); /* 保留头部和底部的空间 */
+}
+
+/* 模态框底部 */
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  gap: var(--spacing-sm);
+}
+
+/* 模态框动画效果 */
+.modal-slide-up .modal {
+  transform: translateY(20px) scale(1);
+}
+
+.modal-slide-up.active .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal-zoom .modal {
+  transform: scale(0.7);
+}
+
+.modal-zoom.active .modal {
+  transform: scale(1);
+}
+
+/* 确认对话框特殊样式 */
+.modal-confirm .modal-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+.modal-confirm-icon {
+  margin-right: var(--spacing-md);
+  font-size: 24px;
+  color: var(--warning-color);
+  flex-shrink: 0;
+}
+
+.modal-confirm-icon.success {
+  color: var(--success-color);
+}
+
+.modal-confirm-icon.error {
+  color: var(--error-color);
+}
+
+.modal-confirm-icon.info {
+  color: var(--info-color);
+}
+
+.modal-confirm-content {
+  flex: 1;
+}
+
+.modal-confirm-title {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 576px) {
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    margin: var(--spacing-md);
+    border-radius: var(--radius-md);
+  }
+  
+  .modal-body {
+    max-height: calc(100vh - 150px);
+  }
+  
+  .modal-header,
+  .modal-footer {
+    padding: var(--spacing-md);
+  }
+}

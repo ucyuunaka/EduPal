@@ -1,0 +1,127 @@
+:root {
+  /* 主色调 */
+  --primary-color: #4a6cfa;
+  --primary-light: #7b90ff;
+  --primary-dark: #2947c6;
+  --primary-hover: #5a79fa;
+  --primary-active: #3957e0;
+
+  /* 功能色 */
+  --success-color: #52c41a;
+  --warning-color: #faad14;
+  --error-color: #f5222d;
+  --info-color: #1890ff;
+
+  /* 背景色 */
+  --bg-color: #ffffff;
+  --bg-color-light: #f5f7fa;
+  --bg-color-dark: #e8edf3;
+
+  /* 文本颜色 */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-hint: #999999;
+  --text-disabled: #cccccc;
+  --text-inverse: #ffffff;
+
+  /* 边框颜色 */
+  --border-color: #e0e0e0;
+  --border-color-dark: #cccccc;
+  --border-focus: var(--primary-color);
+  --border-error: var(--error-color);
+
+  /* 字体设置 */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --font-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  /* 字体大小 */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 24px;
+
+  /* 字体粗细 */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* 行高 */
+  --line-height-compact: 1.2;
+  --line-height-default: 1.5;
+  --line-height-loose: 1.8;
+
+  /* 间距 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* 圆角 */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-circle: 50%;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  /* 过渡效果 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* 组件尺寸 */
+  --input-height-sm: 28px;
+  --input-height-md: 36px;
+  --input-height-lg: 44px;
+
+  /* 布局尺寸 */
+  --header-height: 64px;
+  --sidebar-width: 240px;
+  --content-max-width: 1200px;
+  
+  /* z-index层级管理 */
+  --z-index-dropdown: 100;
+  --z-index-sticky: 200;
+  --z-index-fixed: 300;
+  --z-index-modal-backdrop: 900;
+  --z-index-modal: 1000;
+  --z-index-popover: 1100;
+  --z-index-tooltip: 1200;
+}
+
+/* 深色模式变量 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 主色调-深色模式 */
+    --primary-color: #5b7cff;
+    --primary-light: #8da2ff;
+    --primary-dark: #3d5fe6;
+    --primary-hover: #6b89ff;
+    --primary-active: #4a69eb;
+
+    /* 背景色-深色模式 */
+    --bg-color: #1f1f1f;
+    --bg-color-light: #2b2b2b;
+    --bg-color-dark: #181818;
+
+    /* 文本颜色-深色模式 */
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-hint: #808080;
+    --text-disabled: #606060;
+    --text-inverse: #1f1f1f;
+
+    /* 边框颜色-深色模式 */
+    --border-color: #383838;
+    --border-color-dark: #505050;
+  }
+}
