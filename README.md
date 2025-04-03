@@ -22,7 +22,7 @@
 
 ```
 /
-├── edupal.html                  # 应用入口
+├── edupal.html                 # 应用入口
 ├── assets/                     # 静态资源
 │   ├── icons/                  # 系统图标
 │   ├── avatars/                # 默认头像库
